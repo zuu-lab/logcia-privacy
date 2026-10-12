@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ja">
+<title>Logcia+ プライバシーポリシー</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f6;
+    --surface: #ffffff;
+    --text: #2b2a28;
+    --subtle: #6b6864;
+    --accent: #4b484b;
+    --on-accent: #f6f5f3;
+    --line: #e6e3dd;
+    --line-strong: #cfcbc3;
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141413;
+      --surface: #1e1e1d;
+      --text: #ece9e4;
+      --subtle: #9c9891;
+      --accent: #f2f2f2;
+      --on-accent: #232222;
+      --line: #333230;
+      --line-strong: #47443f;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #141413;
+    --surface: #1e1e1d;
+    --text: #ece9e4;
+    --subtle: #9c9891;
+    --accent: #f2f2f2;
+    --on-accent: #232222;
+    --line: #333230;
+    --line-strong: #47443f;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    background: var(--bg);
+  }
+
+  body {
+    color: var(--text);
+    font-family: "Karla", ui-sans-serif, system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    padding-inline: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+
+  h1, h2 {
+    font-family: "Fraunces", ui-serif, "Hiragino Mincho ProN", "Noto Serif JP", serif;
+    font-weight: 500;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: var(--text); text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+
+  .page {
+    max-width: 700px;
+    margin-inline: auto;
+    padding-block: 56px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mark-glyph {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    flex: none;
+  }
+
+  .mark-name {
+    font-family: "Fraunces", serif;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .lang-toggle button {
+    font: inherit;
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    background: transparent;
+    color: var(--subtle);
+    padding: 6px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+
+  .lang-toggle button[aria-pressed="true"] {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .titleblock h1 {
+    font-size: clamp(30px, 5vw, 40px);
+    margin: 0 0 10px;
+  }
+
+  .meta {
+    color: var(--subtle);
+    font-size: 14px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .meta span::before {
+    content: "";
+  }
+
+  section.policy { margin-top: 40px; }
+
+  section.policy section {
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+
+  section.policy section:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 40px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  h2 .num {
+    font-family: "Karla", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--subtle);
+    letter-spacing: 0.02em;
+  }
+
+  section.policy p { margin: 0 0 14px; }
+  section.policy p:last-child { margin-bottom: 0; }
+
+  section.policy ul {
+    margin: 0 0 14px;
+    padding-left: 1.15em;
+  }
+
+  section.policy li { margin-bottom: 8px; }
+  section.policy li:last-child { margin-bottom: 0; }
+  section.policy li strong { font-weight: 700; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 0 0 14px;
+  }
+
+  .card p:last-child { margin-bottom: 0; }
+
+  footer.pagefoot {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    color: var(--subtle);
+    font-size: 13.5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    .page { padding-block: 40px 72px; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="mark">
+      <img class="mark-glyph" src="icon.png" alt="">
+      <span class="mark-name">Logcia+</span>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / 言語">
+      <button type="button" id="btn-ja" aria-pressed="true">日本語</button>
+      <button type="button" id="btn-en" aria-pressed="false">English</button>
+    </div>
+  </header>
+
+  <!-- ============================= 日本語 ============================= -->
+  <div id="lang-ja">
+
+    <div class="titleblock">
+      <h1>プライバシーポリシー</h1>
+      <div class="meta"><span>最終更新日: 2026年10月12日</span></div>
+    </div>
+
+    <section class="policy">
+
+      <section id="ja-collect">
+        <h2><span class="num">01</span>収集する情報</h2>
+        <p>本アプリ自体は、氏名・メールアドレス・位置情報などの個人情報を収集しません。アカウント登録も不要です。ただし、広告表示のために外部の広告配信サービスを利用しており、その中で端末に関する技術的な情報が扱われることがあります。詳しくは「広告について」をご覧ください。</p>
+      </section>
+
+      <section id="ja-health">
+        <h2><span class="num">02</span>健康に関する記録の取り扱い</h2>
+        <p>本アプリで記録した体調・症状・お薬・通院・検査・医療費・計測の値・問診情報・写真・家族の記録などは、すべてお使いの端末内にのみ保存されます。インターネットを介したサーバーへの送信は行われず、開発者を含め、ユーザー以外の誰も記録の内容を見ることはできません。</p>
+        <div class="card">
+          <p>記録した内容が、広告の配信や広告の対象選びに使われることはありません。広告配信サービスに記録の内容が渡されることもありません。</p>
+        </div>
+      </section>
+
+      <section id="ja-ads">
+        <h2><span class="num">03</span>広告について</h2>
+        <p>本アプリは、無料でご利用いただくために、Google社が提供する広告配信サービス「Google AdMob」を使用して広告を表示しています。AdMobは、広告の配信・不正防止・利用状況の把握のために、端末の識別情報(広告識別子)、おおよその位置情報、広告の表示・タップの履歴などの技術的な情報を取得することがあります。</p>
+        <p>本アプリは、Apple社の「App Tracking Transparency」の仕組みにより、他社のアプリやWebサイトをまたいだトラッキングの許可を、初回にお尋ねします。許可した場合は、興味・関心に合わせた広告が表示されやすくなります。許可しない場合は、広告識別子は使われず、一般的な広告が表示されます。どちらを選んでも、アプリの機能はすべてご利用いただけます。</p>
+        <p>この設定は、iPhoneの「設定」→「プライバシーとセキュリティ」→「トラッキング」から、いつでも変更できます。</p>
+        <div class="card">
+          <p>AdMobによる情報の取り扱いの詳細は、Google社のプライバシーポリシーをご確認ください。<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+        </div>
+      </section>
+
+      <section id="ja-device">
+        <h2><span class="num">04</span>端末の機能へのアクセス</h2>
+        <p>本アプリは、次の機能について、端末に許可を求めることがあります。いずれも、記載の目的以外には使用しません。</p>
+        <ul>
+          <li><strong>Face ID / Touch ID / パスコード</strong> — 設定画面の「アプリのロック」をオンにした場合にのみ使用します。認証はApple社が提供する端末の仕組みの中で完結しており、顔や指紋の情報そのものを本アプリが見ることはできません。</li>
+          <li><strong>カメラ</strong> — 記録や家族のアイコンに載せる写真を撮るときにのみ使用します。</li>
+          <li><strong>写真ライブラリ</strong> — 記録や家族のアイコンに載せる写真を選ぶとき、および、記録に載せた写真をカメラロールに保存するときにのみ使用します。選んだ写真は本アプリの保存領域に取り込み、ライブラリを継続的に参照することはありません。</li>
+          <li><strong>通知</strong> — お薬のアラームや「やること」のお知らせに使用します。お知らせは端末の中で予約され、外部に送信されることはありません。ロック画面の通知に薬の名前を出さないよう、設定で変更することもできます。</li>
+        </ul>
+      </section>
+
+      <section id="ja-backup">
+        <h2><span class="num">05</span>バックアップについて</h2>
+        <p>設定画面の「バックアップを作る」を使うと、家族全員の記録と写真をまとめた1つのファイル(zip形式)を作成できます。このファイルには健康に関する記録が含まれ、パスワードによる保護はありません。</p>
+        <div class="card">
+          <p>このファイルは、ユーザー自身が「保存」や「共有」の操作をして初めて端末の外に出ます。本アプリが自動的にどこかへ送信することはありません。作成したバックアップファイルは、他の人に見られない場所に保管してください。</p>
+        </div>
+      </section>
+
+      <section id="ja-delete">
+        <h2><span class="num">06</span>データの削除</h2>
+        <p>記録は、アプリの画面からいつでも削除できます。また、本アプリを端末から削除すると、端末内に保存されたすべての記録と写真も削除されます。削除したデータは元に戻せないため、必要に応じて事前にバックアップを作成してください。</p>
+      </section>
+
+      <section id="ja-children">
+        <h2><span class="num">07</span>子どものプライバシー</h2>
+        <p>本アプリ自体は個人情報を収集しません。ただし、広告表示のためにGoogle AdMobを使用しているため、お子様が利用される場合は、保護者の方が本ポリシー(特に「広告について」)の内容を事前にご確認ください。本アプリは子どもを主な対象として作られたものではありません。</p>
+      </section>
+
+      <section id="ja-changes">
+        <h2><span class="num">08</span>ポリシーの変更</h2>
+        <p>本ポリシーの内容は、法令の変更やアプリの機能追加に応じて更新されることがあります。重要な変更がある場合は、このページ上の「最終更新日」を更新してお知らせします。</p>
+      </section>
+
+      <section id="ja-contact">
+        <h2><span class="num">09</span>お問い合わせ</h2>
+        <p>本ポリシーについてご質問がある場合は、下記までご連絡ください。</p>
+        <p><a href="mailto:app.contact001@gmail.com">app.contact001@gmail.com</a></p>
+      </section>
+
+    </section>
+
+    <footer class="pagefoot">
+      <span>© 2026 Logcia+</span>
+      <span><a href="support.html">サポート</a> ・ app.contact001@gmail.com</span>
+    </footer>
+
+  </div>
+
+  <!-- ============================= English ============================= -->
+  <div id="lang-en" hidden>
+
+    <div class="titleblock">
+      <h1>Privacy Policy</h1>
+      <div class="meta"><span>Last updated: October 12, 2026</span></div>
+    </div>
+
+    <section class="policy">
+
+      <section id="en-collect">
+        <h2><span class="num">01</span>Information we collect</h2>
+        <p>The app itself collects no personal information &mdash; no name, email address, or location. No account or sign-up is required. It does use a third-party service to show ads, which handles some technical device information; see "Advertising" below.</p>
+      </section>
+
+      <section id="en-health">
+        <h2><span class="num">02</span>Your health records</h2>
+        <p>Everything you record in the app &mdash; conditions and symptoms, medicines, hospital visits, examinations, medical costs, measurements, medical history, photos, and your family members&rsquo; records &mdash; is stored only on your device. Nothing is transmitted to a server over the internet, and no one, including the developer, can see your records.</p>
+        <div class="card">
+          <p>Your records are never used to deliver or target ads, and are never shared with the advertising service.</p>
+        </div>
+      </section>
+
+      <section id="en-ads">
+        <h2><span class="num">03</span>Advertising</h2>
+        <p>To keep the app free, it shows ads using Google&rsquo;s ad service, Google AdMob. AdMob may collect technical information such as a device identifier (advertising identifier), approximate location, and ad impression/click history, in order to deliver ads, prevent fraud, and measure usage.</p>
+        <p>On first use, the app asks for your permission to track activity across other companies&rsquo; apps and websites, using Apple&rsquo;s App Tracking Transparency. If you allow it, ads are more likely to match your interests. If you don&rsquo;t, the advertising identifier is not used and general ads are shown. Either way, every feature of the app remains available.</p>
+        <p>You can change this at any time in the iPhone Settings app under Privacy &amp; Security &rarr; Tracking.</p>
+        <div class="card">
+          <p>For details on how AdMob handles information, see Google&rsquo;s Privacy Policy:<br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+        </div>
+      </section>
+
+      <section id="en-device">
+        <h2><span class="num">04</span>Access to device features</h2>
+        <p>The app may ask permission to use the following device features, only for the purposes described:</p>
+        <ul>
+          <li><strong>Face ID / Touch ID / passcode</strong> &mdash; used only if you turn on "App Lock" in Settings. Authentication happens entirely within Apple&rsquo;s own system; the app never has access to your face or fingerprint data.</li>
+          <li><strong>Camera</strong> &mdash; used only to take a photo to attach to a record or to use as a family member&rsquo;s icon.</li>
+          <li><strong>Photo library</strong> &mdash; used only to pick a photo for a record or a family member&rsquo;s icon, and to save a record&rsquo;s photo to your camera roll when you ask. Picked photos are copied into the app&rsquo;s own storage; the app does not continue to browse your library.</li>
+          <li><strong>Notifications</strong> &mdash; used for medicine alarms and to-do reminders. Reminders are scheduled on your device and are never sent anywhere. You can choose in Settings to hide medicine names on the lock screen.</li>
+        </ul>
+      </section>
+
+      <section id="en-backup">
+        <h2><span class="num">05</span>Backups</h2>
+        <p>"Create backup" in Settings makes a single file (a zip archive) containing all family members&rsquo; records and photos. This file contains health information and is not password-protected.</p>
+        <div class="card">
+          <p>The file leaves your device only when you choose to save or share it &mdash; the app never uploads it anywhere on its own. Please keep any backup file in a place where others cannot see it.</p>
+        </div>
+      </section>
+
+      <section id="en-delete">
+        <h2><span class="num">06</span>Deleting your data</h2>
+        <p>You can delete records at any time from within the app. Deleting the app from your device also deletes every record and photo stored on it. Deleted data cannot be recovered, so please create a backup beforehand if needed.</p>
+      </section>
+
+      <section id="en-children">
+        <h2><span class="num">07</span>Children&rsquo;s privacy</h2>
+        <p>The app itself collects no personal information. However, because it uses Google AdMob to show ads, if a child will be using the app, a parent or guardian should review this policy (particularly the "Advertising" section) beforehand. The app is not primarily directed at children.</p>
+      </section>
+
+      <section id="en-changes">
+        <h2><span class="num">08</span>Changes to this policy</h2>
+        <p>This policy may be updated to reflect legal requirements or new app features. Any significant change will be noted by updating the "Last updated" date at the top of this page.</p>
+      </section>
+
+      <section id="en-contact">
+        <h2><span class="num">09</span>Contact</h2>
+        <p>If you have any questions about this policy, please get in touch:</p>
+        <p><a href="mailto:app.contact001@gmail.com">app.contact001@gmail.com</a></p>
+      </section>
+
+    </section>
+
+    <footer class="pagefoot">
+      <span>© 2026 Logcia+</span>
+      <span><a href="support.html">Support</a> ・ app.contact001@gmail.com</span>
+    </footer>
+
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var ja = document.getElementById('lang-ja');
+    var en = document.getElementById('lang-en');
+    var btnJa = document.getElementById('btn-ja');
+    var btnEn = document.getElementById('btn-en');
+
+    function show(lang) {
+      var isJa = lang === 'ja';
+      ja.hidden = !isJa;
+      en.hidden = isJa;
+      btnJa.setAttribute('aria-pressed', String(isJa));
+      btnEn.setAttribute('aria-pressed', String(!isJa));
+      document.documentElement.lang = lang;
+      try { localStorage.setItem('logcia-privacy-lang', lang); } catch (e) {}
+    }
+
+    btnJa.addEventListener('click', function () { show('ja'); });
+    btnEn.addEventListener('click', function () { show('en'); });
+
+    var saved = null;
+    try { saved = localStorage.getItem('logcia-privacy-lang'); } catch (e) {}
+
+    if (saved === 'en') {
+      show('en');
+    } else if (!saved && /^en/i.test(navigator.language || '')) {
+      show('en');
+    }
+  })();
+</script>
