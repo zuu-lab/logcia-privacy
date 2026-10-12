@@ -286,9 +286,10 @@
 
       <section id="ja-backup">
         <h2><span class="num">05</span>バックアップについて</h2>
-        <p>設定画面の「バックアップを作る」を使うと、家族全員の記録と写真をまとめた1つのファイル(zip形式)を作成できます。このファイルには健康に関する記録が含まれ、パスワードによる保護はありません。</p>
+        <p>設定画面の「バックアップを作る」を使うと、家族全員の記録と写真をまとめた1つのファイル(zip形式)を作成できます。このファイルには健康に関する記録が含まれます。</p>
+        <p>作成するときに、任意でパスワードを設定できます。パスワードを設定すると、ファイルの中身はAES-256方式で暗号化され、そのパスワードがなければ中身を見ることも、バックアップから戻すこともできません。パスワードは端末にも開発者にも保存されないため、忘れた場合は再発行できません。</p>
         <div class="card">
-          <p>このファイルは、ユーザー自身が「保存」や「共有」の操作をして初めて端末の外に出ます。本アプリが自動的にどこかへ送信することはありません。作成したバックアップファイルは、他の人に見られない場所に保管してください。</p>
+          <p>このファイルは、ユーザー自身が「保存」や「共有」の操作をして初めて端末の外に出ます。本アプリが自動的にどこかへ送信することはありません。パスワードを設定しない場合、ファイルを開けば誰でも中身を見られるため、他の人に見られない場所に保管してください。</p>
         </div>
       </section>
 
@@ -368,9 +369,10 @@
 
       <section id="en-backup">
         <h2><span class="num">05</span>Backups</h2>
-        <p>"Create backup" in Settings makes a single file (a zip archive) containing all family members&rsquo; records and photos. This file contains health information and is not password-protected.</p>
+        <p>"Create backup" in Settings makes a single file (a zip archive) containing all family members&rsquo; records and photos. This file contains health information.</p>
+        <p>You can optionally set a password when creating it. With a password, the contents are encrypted with AES-256, and without that password no one can view the contents or restore from the backup. The password is not stored on your device or by the developer, so it cannot be recovered if you forget it.</p>
         <div class="card">
-          <p>The file leaves your device only when you choose to save or share it &mdash; the app never uploads it anywhere on its own. Please keep any backup file in a place where others cannot see it.</p>
+          <p>The file leaves your device only when you choose to save or share it &mdash; the app never uploads it anywhere on its own. Without a password, anyone who opens the file can see its contents, so please keep it in a place where others cannot see it.</p>
         </div>
       </section>
 
